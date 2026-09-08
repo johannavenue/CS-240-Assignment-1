@@ -1,0 +1,27 @@
+def convert_number(number, input_base):
+    decimal = int(number, input_base)
+
+    print("\nConversions:")
+    print("Binary:     ", bin(decimal)[2:])
+    print("Decimal:    ", decimal)
+    print("Octal:      ", oct(decimal)[2:])
+    print("Hexadecimal:", hex(decimal)[2:].upper())
+
+
+print("Number-Base Converter")
+print("2  = Binary")
+print("8  = Octal")
+print("10 = Decimal")
+print("16 = Hexadecimal")
+
+try:
+    number = input("Enter a number: ")
+    input_base = int(input("Enter its base (2, 8, 10, or 16): "))
+
+    if input_base not in [2, 8, 10, 16]:
+        print("Error: Base must be 2, 8, 10, or 16.")
+    else:
+        convert_number(number, input_base)
+
+except ValueError:
+    print("Error: The number is not valid for the selected base.")
